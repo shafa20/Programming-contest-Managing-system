@@ -1,0 +1,360 @@
+create database project
+use project
+create table event_name(
+     event_name varchar(50),
+	 guest_name varchar (50),
+	 arrival_time int,
+
+	constraint pk_event_name Primary key(event_name)
+	);
+
+create table sponser(
+     sponser_name varchar (50),
+	office_location varchar (50),
+	contact_no int,
+
+	constraint pk_sponser_name Primary key (sponser_name)
+	);
+
+create table main_event(
+
+ event_name varchar (50),
+ event_location varchar(50),
+ sponser_name varchar (50),
+ start_time int,
+
+constraint pk_event_name2 Primary key (event_name),
+foreign key (event_name)references event_name(event_name),
+foreign key (sponser_name)references sponser(sponser_name)
+);
+
+create table participant(
+ part_id int,
+ part_name varchar(50),
+ semester varchar (50),
+
+constraint pk_part_id Primary key (part_id)
+);
+
+create table advisor(
+   advisor_id int,
+   advisor_name varchar (50),
+   contract_no varchar (50)
+
+constraint pk_advisor_id Primary key (advisor_id)
+);
+
+create table project(
+ tyep varchar (50),
+ price varchar (50)
+);
+ 
+
+
+
+create table team(
+   team_id int,
+   team_name varchar (50),
+   advisor_id int,
+   part_id int,
+   tyep varchar (50),
+
+constraint pk_team_id Primary key (team_id),
+foreign key(part_id)references participant(part_id),
+foreign key (advisor_id)references advisor(advisor_id)
+
+);
+
+select*from event_name
+select*from sponser
+select*from main_event
+select*from participant
+select*from advisor
+select*from project
+select*from team
+
+	insert into event_name
+	values ('IDPC','Shojib wajed joy',9),
+	('Programming War','Ayub Khan ',10),
+	 ('Contest War','Sheikh Hasina',11),
+	 ('ICPC','Abdul Hamid Khan',12),
+	    ('NCPC','imran bin ajad',1),
+ ('NDPC','Sheikh tonmoy',2),
+	('Programming juddo','sharuk Khan ',3),
+	 ('Contest War uap','Sheikh rehena',4),
+	  ('CPC','mr.kaikobad ',9),
+	   ('DPC','Tarana Halim',11),
+	 ('DVPC','Dr. jafor ullah ',12),
+	('Programming uap','Ayub Khan ',11),
+	 ('Contest War uap2','kobir uddin mia',10),
+	 ('APC','Sheikh Hasina',12),
+	 ('BPC',' nilofar chowdhury',1),
+	    ('EPC','modi',5),
+('FPC','abul kalam ajad',2),
+	('GPC','norul haque ',8),
+	 ('HPC','hyn min son ',4),
+	  ('IPC','varat sing',9),
+	   ('JPC','yu ching Honda',3),
+	 ('KPC','yu ching jacky ',2),
+	('LPC','jack jones ',11),
+	('MPC','randeep hoda',2),
+	('NPC','william hervy ',3),
+	 ('OPC','keton jenings',2),
+	  ('Contest War2','micheal maxweel ',9),
+	   ('Contest War3','Tarana nipa',12),
+	 ('Contest War uap3','Dr. nilima khan ',9),
+	('Programming Contest SPring','aminul biswas',10),
+	('Programming Contest Fall','halim biswas ',11)
+
+	 select*from event_name
+	
+
+
+
+	insert into sponser
+	values ('Bosondara group','ghaka',8800),
+
+	
+	 ('crown cement','gazipur',1100),
+	 ('matador','Banani',5561),
+	 ('ambuza Cement','Gabtalia india',1120),
+	 ('ispahani','mirjapur',5565),
+	 ('star','india delli',1345),
+	 ('sony','mumbai',55670),
+	 ('windows','america',11007),
+	 ('Pran','dhaka',5960),
+	 (' cocola','dhamrai',11300),
+
+
+	 ('khan group','chuadanga',88001),
+
+	 ('chowdhury  group','luxmirpur',55692),
+	 ('fresh Cement','munshiging',110032),
+	 ('gtv','Banani',556165),
+	 ('btv','dhanmondi',541120),
+	 ('rfl','manikgong',550965),
+	 ('dano group','kolkata india',891345),
+	 ('geogle','america',0055670),
+	 ('reliance group','mumbai',1100897),
+	 ('nokia ','india',594560),
+
+
+	 ('symphony','dhaka',128800),
+
+	 ('bata shoe','dhaka',551160),
+	 ('squre pharma','dhamrai',111100),
+	 ('mam pani','uttara',125561),
+	 ('center fruit','Gazipur',1234120),
+	 ('bangla phone','ghulsan',5523465),
+	 ('desh bangla','mirpur',2341345),
+	 ('jago bd chanel','mirpur',955670),
+	 ('news 24 chanel','kawran bazar',0911007),
+	 ('bikroy,com','dhaka',55960),
+	  ('JR paribahan','dhaka gabtoli',5596780)
+
+	 select*from sponser
+	
+
+
+	insert into main_event
+	 values ('IDPC','University of Asia Pacific','Bosondara group ',9),
+	 ('Programming War','Daffodil International University','crown cement',10),
+	 ('Contest War','american International University','matador',11),
+
+	   ('ICPC','Dhaka University ','ambuza Cement',9),
+	 ('NCPC','Sydney International University','ispahani',10),
+	  ('NDPC','University of Newzeland','star ',9),
+	 ('Programming juddo','Daffodil International University bangladesh','sony',10),
+	 ('Contest War uap','University of Asia Pacific','windows ',9),
+	 ('CPC','Kustia Islamic University','pran',10),
+	  ('DPC','University of Dhenmark','pran ',12),
+	 ('DVPC','Khulna University','khan group',1),
+	 
+	 ('Programming uap',' University of Asia Pacific','chowdhury  group',2)
+
+	 select*from main_event
+	
+
+
+	insert into participant 
+	values (17201020,'shafa khan','four'),
+	 (17201021,'anik khan','four'),
+	(17101020,'hasin','five'),
+	 (17101021,'sakib','1st'),
+	  (18201021,'sifat khan','second'),
+	(18201020,'shihab jhan','third'),
+	 (16201021,'ahad khan','sixth'),
+	 (16201020,'tasim khan','seven'),
+	 (15201021,'lulu khan','eight'),
+	 (15201020,'anik khan','four'),
+	(15101020,'hasin','five'),
+	 (15101021,'sakib','1st'),
+	  (19201021,'sifat khan','second'),
+	(19201020,'shihab jhan','third'),
+	 (19101021,'ahad khan','sixth'),
+	 (19101020,'tasim khan','seven'),
+     (171,'jack','second'),
+	(1712,'maxy gerny','eight'),
+	 (17123,'rodrigo','1st'),
+	  (171234,'govinda','seven'),
+	(1712345,'wu chu hang','third'),
+(11,'michel mory','six'),
+	(112,'harry gerny','five'),
+	 (1123,'pedro','eight'),
+	  (11234,'javed wasim','two'),
+	(112345,'mialina ','third'),
+	 (1123456,'beyazid','four'),
+	 (11234567,'oliver pope','1st'),
+     (21,'jerin akther','eight'),
+	 (212,'rnespal roy','1st'),
+	  (2123,'julian robbert','seven'),
+	(21234,'dilruhan perera','third')
+
+	 select*from participant
+
+
+insert into advisor
+
+values (01,'imran bin ajad','01923'),
+	 (02,'sakib hasan dhrobo ','017345'),
+	(03,'rajib  sir','01843'),
+	 (04,'naima sultana','01123'),
+	  (05,'alok kumar saha','6789'),
+	(06,'shopon','09675'),
+	 (07,'shammi akter','8974'),
+	 (08,'shila rahman','27834'),
+	 (09,'ayub khan','011234'),
+    (101,'robert','01123'),
+	 (102,'frankistain ','011345'),
+	(103,'joe burns','011843'),
+	 (104,'ojit sorkar','011223'),
+	  (105,'ajoy ghosh','06789'),
+	(106,'luka david','0229675'),
+	 (107,'iftikur rahman','0668974'),
+	 (108,'rustom mia','2237834'),
+	 (109,'cris moris','01001234'),
+	 (201,'pervez chowdhury','0231923'),
+	 (202,' nikhil roy ','01337345'),
+	(203,'wu chang jam','01234843'),
+	 (204,'nilofar khan','06781123'),
+	  (205,'omar akbar','01126789'),
+	(206,'Md. nasir khasru','0193675'),
+	 (207,'peter michel','018974'),
+	 (208,'kusal javed perera','01227834'),
+	 (209,'harry maquire','0177234'),
+	 (301,'Mst. tarana nipa','0167923'),
+	 (302,'fernando perez','014567345'),
+	(303,'thiago mathew','03345843'),
+	(304,'philipe kane','01435234')
+
+	 select*from advisor
+
+
+insert into project
+ values ('junior natinal level','20 lakh'),
+ ('junior internatinal level(JPC)','2 cr'),
+    ('national level(NCPC)',' 70 lakh'),
+	('international level(ICPC)','5 cr'),
+   ('inter district level(DPC)',' 5 lakh'),
+    ('inter division level(DVPC)',' 10 lakh'),
+  ('inter college level(CPC)','10 thousands'),
+   ('inter versity level(VCPC)',' 2 lakh'),
+    ('gold category(GPC)',' 5 cr'),
+	('all kind of UAP contest ',' 5 lakh'),
+    ('selver(normal) category(NPC)','1 cr'),
+	 ('other all contest','25 lakh')
+
+
+	select*from project
+	
+
+
+insert into team 
+values (1,'Uap coder',01,17201020,'junior natinal level'),
+ (2,'safa the boss',02,17201021,'junior internatinal level(JPC)'),
+
+ (3,'sustian',03,17101020,'national level(NCPC)'),
+(7,'uapian',04,17101021,'international level(ICPC)'),
+(4,'kuetian',05,18201021,'inter district level(DPC)'),
+ (5,'coder7',06,18201020,'inter division level(DVPC)'),
+
+ (6,'heavy coder',07,16201021,'inter college level(CPC)'),
+(8,'du coder',08,16201020,'inter versity level(VCPC)'),
+
+ (9,'junior coder',09,15201021,'gold category(GPC)'),
+ (10,'all star',101,15201020,'all kind of UAP contest'),
+ (11,'chapion',102,15101021,'selver(normal) category(NPC)'),
+
+ (12,'great coder',103,15101020,'other all contest'),
+(13,'team infinity',104,19201021,'international level(ICPC)'),
+(014,'long time no ac',105,19201020,'international level(ICPC)'),
+ (015,'coder79',106,19101020,'international level(ICPC)'),
+
+ (016,'loop coder',107,19101021,'inter district level(DPC)'),
+(017,'dynamic coder',108,171,'inter district level(DPC)'),
+
+ (018,'recursive coder',109,1712,'inter district level(DPC)'),
+ (019,'jetboi jetbo',201,17123,'inter versity level(VCPC)'),
+ (020,'shining star',202,171234,'inter versity level(VCPC)'),
+
+ (21,'shei rokom coder',203,1712345,'inter versity level(VCPC)'),
+(22,'code breakers',204,11,'inter versity level(VCPC)'),
+(23,'xenon 42',205,112,'inter versity level(VCPC)'),
+ (244,'single man',206,1123,'inter college level(CPC)'),
+
+ (255,'one man army',207,11234,'gold category(GPC)'),
+(26,'talented coder',208,112345,'gold category(GPC)'),
+
+ (027,'time complexity best',209,1123456,'gold category(GPC)'),
+ (028,'avarage case',301,11234567,'inter college level(CPC)'),
+ (29,'geogle dream',302,21,'gold category(GPC)'),
+
+ (030,'hanter',303,212,'inter college level(CPC)')
+
+
+ select*from team
+ 
+
+ select  team_name
+ from team
+	
+	select  guest_name	
+	from  event_name	
+	where  arrival_time = 9
+
+	select event_name	
+	from  event_name	
+	where  arrival_time = 9
+	
+	select * from participant, advisor
+	select event_location from main_event ,event_name where event_name.event_name =main_event.event_name
+
+   select event_name	from event_name	where event_name like '%PC%' 
+     select distinct office_location 	from   sponser 		order by office_location  desc
+	select distinct price from project
+	select count (*)from advisor
+	
+
+
+	
+	select advisor_name
+	from advisor
+	where advisor_id=01
+
+
+	select team_name 
+	from team
+	where advisor_id=01
+
+
+	select part_name
+	from participant
+	where part_id=01
+
+select tyep
+from project
+where price > '1o lakh'
+
+select sponser_name
+from sponser
+where contact_no between 1100 and 1100897
